@@ -17,7 +17,9 @@ const products = [
     price: "285,000₽",
     stock: "Под заказ",
     description: "Virtex-7 FPGA с 693K логическими ячейками",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400",
+    image:
+      "https://www.xilinx.com/content/dam/xilinx/imgs/products/virtex-7-fpga.jpg",
+    datasheet: "https://docs.xilinx.com/v/u/en-US/ds183_Virtex_7_Data_Sheet",
     specs: ["693K Logic Cells", "1760-pin BGA", "28nm"],
   },
   {
@@ -27,7 +29,9 @@ const products = [
     price: "45,500₽",
     stock: "В наличии",
     description: "8-ядерный DSP процессор KeyStone",
-    image: "https://images.unsplash.com/photo-1573888516863-3d83b20abe87?w=400",
+    image:
+      "https://www.ti.com/content/dam/ticom/images/products/ic/processors/dsp/c6000/tms320c6678-processor.jpg",
+    datasheet: "https://www.ti.com/lit/ds/symlink/tms320c6678.pdf",
     specs: ["8x C66x Cores", "1.25 GHz", "324-pin BGA"],
   },
   {
@@ -37,7 +41,10 @@ const products = [
     price: "38,200₽",
     stock: "Мало в наличии",
     description: "14-битный АЦП 1 GSPS с JESD204B",
-    image: "https://images.unsplash.com/photo-1567594311919-0c3e25b6a5e0?w=400",
+    image:
+      "https://www.analog.com/media/en/technical-documentation/product-images/ad9680.jpg",
+    datasheet:
+      "https://www.analog.com/media/en/technical-documentation/data-sheets/AD9680.pdf",
     specs: ["14-bit", "1 GSPS", "JESD204B"],
   },
   {
@@ -47,7 +54,9 @@ const products = [
     price: "12,800₽",
     stock: "В наличии",
     description: "15 ГГц синтезатор частот с низким джиттером",
-    image: "https://images.unsplash.com/photo-1574031971403-6ee74b299c93?w=400",
+    image:
+      "https://www.ti.com/content/dam/ticom/images/products/ic/clock-timing/lmx2594-pll-synthesizer.jpg",
+    datasheet: "https://www.ti.com/lit/ds/symlink/lmx2594.pdf",
     specs: ["15 GHz", "Low Jitter", "48-pin QFN"],
   },
   {
@@ -57,7 +66,8 @@ const products = [
     price: "8,900₽",
     stock: "В наличии",
     description: "SiGe:C МШУ для 5G приложений",
-    image: "https://images.unsplash.com/photo-1581093804475-577d72e38aa0?w=400",
+    image: "https://assets.nexperia.com/documents/product-image/BGA3018.jpg",
+    datasheet: "https://assets.nexperia.com/documents/data-sheet/BGA3018.pdf",
     specs: ["50 MHz-6 GHz", "22 dB gain", "SOT363"],
   },
   {
@@ -67,7 +77,10 @@ const products = [
     price: "15,400₽",
     stock: "В наличии",
     description: "Прецизионный 4-канальный SPST коммутатор",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400",
+    image:
+      "https://www.analog.com/media/en/technical-documentation/product-images/adg5412.jpg",
+    datasheet:
+      "https://www.analog.com/media/en/technical-documentation/data-sheets/ADG5412.pdf",
     specs: ["4-Channel SPST", "±15V", "LFCSP-24"],
   },
 ];
@@ -131,6 +144,15 @@ const ProductCatalog = () => {
                 <div className="flex gap-2">
                   <Button className="flex-1">
                     <Icon name="ShoppingCart" size={16} />В корзину
+                  </Button>
+                  <Button variant="outline" size="icon" asChild>
+                    <a
+                      href={product.datasheet}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Icon name="FileText" size={16} />
+                    </a>
                   </Button>
                   <Button variant="outline" size="icon">
                     <Icon name="Heart" size={16} />
